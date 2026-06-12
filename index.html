@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>心と体の元気サポーターYSY 太田由美｜ニコニコ鬼コーチYUMI（静岡県袋井市）</title>
+<title>心と体の元気サポーターYSY太田由美</title>
 <meta name="description" content="静岡県袋井市浅羽の土台づくり専門スタジオ。心と体の元気サポーターYSY・太田由美（ニコニコ鬼コーチYUMI）が、幼児からシニア・アスリートまで、笑顔で追い込むパーソナルトレーニングとコンディショニングを届けます。">
 <link rel="icon" href="images/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
@@ -362,6 +362,37 @@ section{padding:clamp(72px,10vw,130px) clamp(20px,6vw,80px)}
 @media(max-width:880px){.dream{grid-template-columns:1fr 1fr}.sponsor{background-attachment:scroll}}
 @media(max-width:520px){.dream{grid-template-columns:1fr}}
 
+/* ---------- Access ---------- */
+.access{background:#fff}
+.access__grid{
+  display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:clamp(24px,4vw,48px);align-items:stretch;
+}
+.access__addr{
+  display:flex;gap:14px;align-items:flex-start;
+  background:var(--cream);border:1px solid #FFE0B5;border-radius:16px;
+  padding:20px 22px;margin-bottom:22px;line-height:1.7;
+}
+.access__addr .ico{font-size:1.4rem;line-height:1.2}
+.access__addr strong{display:block;font-weight:800;margin-bottom:2px}
+.access__list{display:flex;flex-direction:column;gap:14px}
+.access__list>div{
+  background:#FDFBF3;border:1px solid rgba(31,42,48,.08);border-radius:14px;
+  padding:16px 20px;display:grid;grid-template-columns:110px 1fr;gap:10px;align-items:start;
+}
+.access__list dt{font-weight:800;font-size:.9rem}
+.access__list dd{font-size:.9rem;color:var(--ink-soft)}
+.access__map{
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+  min-height:380px;border:1px solid rgba(31,42,48,.08);
+}
+.access__map iframe{display:block;width:100%;height:100%;min-height:380px}
+@media(max-width:880px){
+  .access__grid{grid-template-columns:1fr}
+  .access__map{min-height:320px}
+  .access__map iframe{min-height:320px}
+}
+
 /* ---------- Contact / CTA ---------- */
 .cta{
   background:
@@ -431,6 +462,7 @@ footer{
     <a href="#services">サポート</a>
     <a href="#studio">スタジオ</a>
     <a href="#sponsor">夢への挑戦</a>
+    <a href="#access">アクセス</a>
     <a class="nav__cta" href="https://www.instagram.com/kokorokaradaysy/" target="_blank" rel="noopener">DMで相談</a>
   </div>
 </nav>
@@ -624,7 +656,7 @@ footer{
           地元が大好きだから、この袋井市浅羽で自分の場所が持てたことが、何より嬉しい。コンディショニングからトレーニングまで、安心して通っていただける一人ひとりの居場所をつくっています。
         </p>
         <div class="studio__facts">
-          <div class="fact"><span class="ico">📍</span><strong>静岡県袋井市浅羽</strong><span>地元密着・通いやすい立地</span></div>
+          <div class="fact"><span class="ico">📍</span><strong>袋井市浅羽1773-7 2階</strong><span>バス停「大庭」から徒歩1分</span></div>
           <div class="fact"><span class="ico">🔇</span><strong>床の防音対策済み</strong><span>思いっきり動ける環境</span></div>
           <div class="fact"><span class="ico">👨‍👩‍👧</span><strong>幅広い世代に対応</strong><span>幼児〜シニア・アスリート</span></div>
           <div class="fact"><span class="ico">🎯</span><strong>1対1のパーソナル</strong><span>あなた専用メニュー</span></div>
@@ -695,6 +727,48 @@ footer{
   </div>
 </section>
 
+<!-- ===== Access ===== -->
+<section class="access" id="access">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label en">ACCESS</span>
+      <h2>アクセス</h2>
+    </div>
+    <div class="access__grid reveal">
+      <div class="access__info">
+        <div class="access__addr">
+          <span class="ico">📍</span>
+          <div>
+            <strong>心と体の元気サポーターYSY</strong>
+            〒437-1101 静岡県袋井市浅羽1773-7 2階
+          </div>
+        </div>
+        <dl class="access__list">
+          <div>
+            <dt>🚉 最寄駅</dt>
+            <dd>袋井駅から3.5km<br>御厨駅（静岡）から3.9km</dd>
+          </div>
+          <div>
+            <dt>🚌 バス停</dt>
+            <dd>「大庭」から62m（徒歩1分）</dd>
+          </div>
+          <div>
+            <dt>🚗 駐車場</dt>
+            <dd>駐車場あり（無料）</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="access__map">
+        <iframe
+          src="https://www.google.com/maps?q=%E9%9D%99%E5%B2%A1%E7%9C%8C%E8%A2%8B%E4%BA%95%E5%B8%82%E6%B5%85%E7%BE%BD1773-7&z=16&output=embed"
+          width="100%" height="100%" style="border:0;" loading="lazy"
+          allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          title="心と体の元気サポーターYSY（静岡県袋井市浅羽1773-7）の地図"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CTA ===== -->
 <section class="cta" id="contact">
   <div class="cta__box reveal">
@@ -708,7 +782,7 @@ footer{
 
     <div class="cta__notes">
       <div><b>FOR</b>幼児〜シニア・アスリート</div>
-      <div><b>WHERE</b>静岡県袋井市浅羽</div>
+      <div><b>WHERE</b>静岡県袋井市浅羽1773-7 2階</div>
       <div><b>CONTACT</b>Instagram DM / LINE</div>
     </div>
   </div>
