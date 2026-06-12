@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ニコニコ鬼コーチYUMI｜心と体の元気サポーターYSY 太田由美（静岡県袋井市）</title>
+<meta name="description" content="静岡県袋井市浅羽の土台づくり専門スタジオ。心と体の元気サポーターYSY・太田由美（ニコニコ鬼コーチYUMI）が、幼児からシニア・アスリートまで、笑顔で追い込むパーソナルトレーニングとコンディショニングを届けます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#F77F00;
+  --orange-deep:#E2641A;
+  --yellow:#FFC93C;
+  --lime:#8AC926;
+  --lime-deep:#5E9C1E;
+  --ink:#1F2A30;
+  --ink-soft:#4A5A62;
+  --paper:#FFFDF7;
+  --cream:#FFF4E0;
+  --radius:22px;
+  --shadow:0 18px 40px -18px rgba(31,42,48,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Zen Kaku Gothic New',sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--yellow);color:var(--ink)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:'Zen Maru Gothic',sans-serif;line-height:1.4}
+.en{font-family:'Outfit',sans-serif;letter-spacing:.14em}
+
+/* ---------- Nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(20px,5vw,56px);
+  background:rgba(255,253,247,.86);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(31,42,48,.07);
+}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:800}
+.nav__logo .mark{width:38px;height:38px;flex:none}
+.nav__logo .en{font-size:1.15rem;font-weight:800;color:var(--ink)}
+.nav__logo small{font-size:.68rem;font-weight:500;color:var(--ink-soft);display:block;line-height:1.3;letter-spacing:.05em}
+.nav__links{display:flex;gap:clamp(14px,2.4vw,28px);align-items:center;font-size:.86rem;font-weight:500}
+.nav__links a{position:relative;padding:4px 0;transition:color .25s}
+.nav__links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--orange),var(--yellow));transition:width .3s}
+.nav__links a:hover{color:var(--orange-deep)}
+.nav__links a:hover::after{width:100%}
+.nav__cta{
+  background:var(--ink);color:#fff;padding:9px 20px;border-radius:999px;
+  font-weight:700;font-size:.84rem;transition:transform .25s,background .25s;
+}
+.nav__cta:hover{background:var(--orange);transform:translateY(-2px)}
+@media(max-width:880px){.nav__links a:not(.nav__cta){display:none}}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:grid;
+  grid-template-columns:minmax(0,1.2fr) minmax(0,.85fr);
+  align-items:center;
+  gap:clamp(24px,4vw,60px);
+  padding:120px clamp(20px,6vw,80px) 90px;
+  background:
+    radial-gradient(1100px 600px at 85% -10%,var(--cream) 0%,transparent 60%),
+    radial-gradient(700px 500px at -10% 110%,#F2F9E4 0%,transparent 55%),
+    var(--paper);
+  overflow:hidden;
+}
+.hero__eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.78rem;font-weight:600;color:var(--orange-deep);
+  background:#FFF1DC;border:1px solid #FFDDB0;
+  padding:7px 16px;border-radius:999px;margin-bottom:26px;
+}
+.hero__eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.55}}
+.hero h1{
+  font-size:clamp(2rem,5.4vw,3.8rem);
+  font-weight:900;
+  letter-spacing:.02em;
+  margin-bottom:8px;
+}
+.hero h1 .stroke{
+  background:linear-gradient(transparent 68%,var(--yellow) 68%);
+  padding:0 .06em;
+}
+.hero h1 .oni{color:var(--orange-deep)}
+.hero__name{
+  display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;
+  margin:22px 0 26px;
+}
+.hero__name .en{
+  font-size:clamp(2.4rem,6.6vw,4.2rem);font-weight:800;letter-spacing:.06em;
+  background:linear-gradient(92deg,var(--orange) 10%,var(--orange-deep) 45%,var(--lime-deep) 95%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1.05;
+}
+.hero__name .ja{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:1.05rem;color:var(--ink-soft)}
+.hero__lead{
+  max-width:34em;color:var(--ink-soft);font-size:clamp(.95rem,1.4vw,1.05rem);
+  margin-bottom:32px;
+}
+.hero__actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 30px;border-radius:999px;font-weight:700;font-size:.95rem;
+  transition:transform .25s,box-shadow .25s,background .25s;
+}
+.btn--primary{
+  background:linear-gradient(95deg,var(--orange),var(--orange-deep));
+  color:#fff;box-shadow:0 14px 28px -12px rgba(247,127,0,.55);
+}
+.btn--primary:hover{transform:translateY(-3px);box-shadow:0 20px 34px -12px rgba(247,127,0,.6)}
+.btn--ghost{border:2px solid var(--ink);color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:#fff;transform:translateY(-3px)}
+
+.hero__meta{
+  display:flex;gap:clamp(18px,3vw,40px);flex-wrap:wrap;
+  margin-top:42px;padding-top:26px;border-top:1px dashed rgba(31,42,48,.18);
+}
+.hero__meta div{font-size:.82rem}
+.hero__meta strong{display:block;font-family:'Outfit',sans-serif;font-weight:700;font-size:1rem;color:var(--ink);margin-bottom:2px;letter-spacing:.04em}
+.hero__meta small{color:var(--ink-soft)}
+
+/* mascot signature */
+.hero__visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:340px}
+.hero__logo{
+  width:min(380px,78%);height:auto;border-radius:50%;
+  filter:drop-shadow(0 30px 50px rgba(226,100,26,.32));
+  animation:heroBob 6s ease-in-out infinite;
+}
+@keyframes heroBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-16px) rotate(2deg)}}
+.float-chip{
+  position:absolute;background:#fff;border-radius:16px;box-shadow:var(--shadow);
+  padding:12px 18px;font-size:.8rem;font-weight:700;display:flex;align-items:center;gap:9px;
+  border:1px solid rgba(31,42,48,.06);
+  animation:bob 5s ease-in-out infinite;
+}
+.float-chip .ico{font-size:1.15rem}
+.float-chip--1{top:4%;left:-2%;animation-delay:0s}
+.float-chip--2{bottom:18%;right:-4%;animation-delay:1.3s}
+.float-chip--3{bottom:-2%;left:14%;animation-delay:2.4s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hero__scroll{
+  position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+  font-size:.68rem;color:var(--ink-soft);display:flex;flex-direction:column;align-items:center;gap:8px;
+}
+.hero__scroll::after{content:"";width:1px;height:42px;background:linear-gradient(var(--ink-soft),transparent);animation:drip 2s ease-in-out infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}55%{transform:scaleY(1);transform-origin:top}100%{transform:scaleY(0);transform-origin:bottom}}
+@media(max-width:880px){
+  .hero{grid-template-columns:1fr;padding-top:108px;text-align:left}
+  .hero__visual{order:-1;min-height:230px}
+  .hero__logo{width:min(220px,58%)}
+  .float-chip{display:none}
+}
+
+/* ---------- Sections base ---------- */
+section{padding:clamp(72px,10vw,130px) clamp(20px,6vw,80px)}
+.wrap{max-width:1120px;margin:0 auto}
+.sec-head{margin-bottom:clamp(36px,5vw,64px)}
+.sec-head .label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:.74rem;font-weight:600;color:var(--lime-deep);margin-bottom:14px;
+}
+.sec-head .label::before{content:"";width:26px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--lime),var(--yellow))}
+.sec-head h2{font-size:clamp(1.6rem,3.6vw,2.5rem);font-weight:900;letter-spacing:.02em}
+.sec-head p{color:var(--ink-soft);margin-top:14px;max-width:42em}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.is-in{opacity:1;transform:none}
+
+/* ---------- Manifesto pull-quote ---------- */
+.manifesto{
+  background:linear-gradient(180deg,var(--paper),#FFF8E8);
+  text-align:center;
+}
+.manifesto__inner{max-width:880px;margin:0 auto}
+.manifesto p{
+  font-family:'Zen Maru Gothic',sans-serif;font-weight:700;
+  font-size:clamp(1.3rem,3.2vw,2rem);line-height:2;letter-spacing:.02em;
+}
+.manifesto p .hl{
+  background:linear-gradient(transparent 65%,#FFE38A 65%);padding:0 .1em;
+}
+.manifesto p .em{color:var(--orange-deep)}
+.manifesto__sign{
+  margin-top:30px;font-size:.85rem;color:var(--ink-soft);
+  display:inline-flex;align-items:center;gap:10px;
+}
+.manifesto__sign::before,.manifesto__sign::after{content:"";width:40px;height:1px;background:var(--ink-soft);opacity:.4}
+
+/* ---------- Profile ---------- */
+.profile{background:#fff}
+.profile__grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(30px,5vw,70px);align-items:center}
+.profile__photo{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  aspect-ratio:4/4.6;
+  box-shadow:var(--shadow);
+}
+.profile__photo>img{width:100%;height:100%;object-fit:cover}
+.profile__badge{
+  position:absolute;bottom:18px;left:18px;right:18px;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(6px);
+  border-radius:14px;padding:12px 18px;font-size:.8rem;font-weight:700;
+  display:flex;align-items:center;gap:10px;border:1px solid rgba(31,42,48,.06);
+}
+.profile__badge .en{color:var(--orange-deep);font-weight:800}
+.profile__body h3{font-size:clamp(1.25rem,2.4vw,1.7rem);font-weight:900;margin-bottom:18px}
+.profile__body h3 em{font-style:normal;color:var(--orange-deep)}
+.profile__body p{color:var(--ink-soft);margin-bottom:16px}
+.profile__quote{
+  margin:24px 0;padding:18px 22px;border-left:4px solid var(--orange);
+  background:var(--cream);border-radius:0 14px 14px 0;
+  font-family:'Zen Maru Gothic',sans-serif;font-weight:700;color:var(--ink);
+}
+.profile__keywords{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.kw{
+  font-size:.78rem;font-weight:700;padding:8px 16px;border-radius:999px;
+  background:var(--cream);color:var(--orange-deep);border:1px solid #FFE0B5;
+  transition:transform .25s;
+}
+.kw:nth-child(3n){background:#F0F8E1;color:var(--lime-deep);border-color:#D8ECB4}
+.kw:nth-child(3n+2){background:#FFF7DD;color:#A8780A;border-color:#F4E2A4}
+.kw:hover{transform:translateY(-3px)}
+@media(max-width:880px){.profile__grid{grid-template-columns:1fr}.profile__photo{max-width:420px;margin:0 auto}}
+
+/* ---------- Credentials ---------- */
+.creds{
+  background:
+    radial-gradient(900px 480px at 110% 0%,#FFF2DB 0%,transparent 55%),
+    var(--paper);
+}
+.creds__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cred{
+  background:#fff;border-radius:16px;padding:22px 24px;
+  border:1px solid rgba(31,42,48,.08);
+  display:flex;gap:16px;align-items:flex-start;
+  transition:transform .25s,border-color .25s;
+}
+.cred:hover{transform:translateY(-4px);border-color:var(--orange)}
+.cred__num{
+  font-family:'Outfit',sans-serif;font-weight:700;font-size:.85rem;
+  color:var(--orange-deep);flex:none;padding-top:2px;letter-spacing:.06em;
+}
+.cred__body strong{display:block;font-weight:800;font-size:.98rem;margin-bottom:4px;line-height:1.5}
+.cred__body span{font-size:.78rem;color:var(--ink-soft)}
+@media(max-width:760px){.creds__grid{grid-template-columns:1fr}}
+
+/* ---------- Services / Audience ---------- */
+.services{background:var(--ink);color:#fff}
+.services .sec-head h2{color:#fff}
+.services .sec-head p{color:#B9C6CC}
+.services .sec-head .label{color:var(--yellow)}
+.services__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.6vw,28px)}
+.scard{
+  background:#27343B;border-radius:var(--radius);padding:36px 30px;
+  border:1px solid rgba(255,255,255,.07);
+  transition:transform .3s,border-color .3s,background .3s;
+  display:flex;flex-direction:column;gap:14px;
+}
+.scard:hover{transform:translateY(-8px);border-color:var(--yellow);background:#2C3B43}
+.scard .ico{
+  width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:1.6rem;
+  background:linear-gradient(135deg,var(--orange),var(--yellow));
+}
+.scard:nth-child(2) .ico{background:linear-gradient(135deg,var(--yellow),var(--lime))}
+.scard:nth-child(3) .ico{background:linear-gradient(135deg,var(--lime),var(--lime-deep))}
+.scard h3{font-size:1.15rem;font-weight:900;color:#fff}
+.scard p{font-size:.9rem;color:#B9C6CC;flex:1}
+.scard .tagline{font-size:.74rem;font-weight:600;color:var(--yellow);letter-spacing:.1em}
+@media(max-width:880px){.services__grid{grid-template-columns:1fr}}
+
+/* ---------- Studio band ---------- */
+.studio{
+  background:#FDFBF3;
+}
+.studio__grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(30px,5vw,70px);align-items:center}
+.studio__body h3{font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:900;margin-bottom:16px}
+.studio__body p{color:var(--ink-soft);margin-bottom:14px}
+.studio__facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
+.fact{background:#fff;border-radius:14px;padding:18px;border:1px solid rgba(31,42,48,.08)}
+.fact .ico{font-size:1.4rem;margin-bottom:6px;display:block}
+.fact strong{display:block;font-weight:800;font-size:.92rem;margin-bottom:2px}
+.fact span{font-size:.78rem;color:var(--ink-soft)}
+.studio__photo{
+  border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;
+  box-shadow:var(--shadow);position:relative;
+}
+.studio__photo img{width:100%;height:100%;object-fit:cover}
+.studio__photo::after{
+  content:"袋井市浅羽・土台づくり専門スタジオ";
+  position:absolute;left:18px;bottom:18px;right:18px;
+  background:rgba(255,255,255,.92);padding:10px 14px;border-radius:10px;
+  font-size:.78rem;font-weight:700;backdrop-filter:blur(6px);
+}
+@media(max-width:880px){.studio__grid{grid-template-columns:1fr}}
+
+/* ---------- Voices ---------- */
+.voices__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:14px}
+.voice{
+  background:#fff;border-radius:18px;padding:26px 28px;
+  border:1px solid rgba(31,42,48,.08);box-shadow:0 10px 26px -20px rgba(31,42,48,.3);
+}
+.voice .quote-mark{
+  font-family:'Outfit',sans-serif;font-size:2.4rem;font-weight:800;line-height:.6;
+  color:var(--orange);margin-bottom:8px;display:block;
+}
+.voice p{font-family:'Zen Maru Gothic',sans-serif;font-weight:700;font-size:1rem;color:var(--ink)}
+@media(max-width:680px){.voices__grid{grid-template-columns:1fr}}
+
+/* ---------- Sponsor / Dream ---------- */
+.sponsor{
+  position:relative;
+  background:url('images/sea.jpg') center 40%/cover no-repeat fixed;
+  color:#fff;text-align:left;
+}
+.sponsor::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(31,42,48,.7),rgba(31,42,48,.55) 50%,rgba(31,42,48,.78));
+}
+.sponsor .wrap{position:relative}
+.sponsor .label{color:var(--yellow)}
+.sponsor h2{color:#fff;font-size:clamp(1.7rem,3.6vw,2.6rem);margin-bottom:20px}
+.sponsor h2 .hl{background:linear-gradient(transparent 65%,rgba(255,201,60,.35) 65%);padding:0 .1em}
+.sponsor__lead{font-size:clamp(1rem,1.5vw,1.1rem);max-width:42em;margin-bottom:36px;color:#E8EEF1}
+.dream{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  margin:36px 0 44px;
+}
+.dream__item{
+  background:rgba(255,255,255,.08);backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:22px;
+  transition:transform .3s,background .3s;
+}
+.dream__item:hover{transform:translateY(-6px);background:rgba(255,255,255,.13)}
+.dream__num{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.4rem;color:var(--yellow);display:block;margin-bottom:8px;letter-spacing:.06em}
+.dream__item strong{display:block;font-weight:800;font-size:.98rem;margin-bottom:6px;line-height:1.5}
+.dream__item span{font-size:.82rem;color:#C9D1D5}
+.sponsor__return{
+  background:rgba(255,255,255,.06);border:1px dashed rgba(255,255,255,.3);
+  border-radius:18px;padding:24px 28px;margin-bottom:32px;
+}
+.sponsor__return h4{font-family:'Zen Maru Gothic',sans-serif;font-weight:900;font-size:1rem;margin-bottom:10px;color:var(--yellow)}
+.sponsor__return p{font-size:.9rem;color:#D8DFE2}
+@media(max-width:880px){.dream{grid-template-columns:1fr 1fr}.sponsor{background-attachment:scroll}}
+@media(max-width:520px){.dream{grid-template-columns:1fr}}
+
+/* ---------- Contact / CTA ---------- */
+.cta{
+  background:
+    radial-gradient(700px 420px at 12% 20%,rgba(255,201,60,.35),transparent 60%),
+    radial-gradient(700px 420px at 88% 85%,rgba(138,201,38,.28),transparent 60%),
+    linear-gradient(120deg,#FFF6E6,#FDFBF3);
+}
+.cta__box{
+  max-width:880px;margin:0 auto;text-align:center;
+  background:#fff;border-radius:30px;padding:clamp(44px,6vw,72px) clamp(24px,5vw,64px);
+  box-shadow:var(--shadow);border:1px solid rgba(31,42,48,.06);
+  position:relative;overflow:hidden;
+}
+.cta__box::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:8px;
+  background:linear-gradient(90deg,var(--orange),var(--yellow),var(--lime));
+}
+.cta__box h2{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;margin-bottom:16px}
+.cta__box p{color:var(--ink-soft);max-width:36em;margin:0 auto 30px}
+.cta__ig{
+  display:inline-flex;align-items:center;gap:12px;
+  background:linear-gradient(95deg,#F77F00,#E2641A);color:#fff;
+  padding:16px 36px;border-radius:999px;font-weight:700;font-size:1rem;
+  box-shadow:0 16px 32px -12px rgba(226,100,26,.55);
+  transition:transform .25s,box-shadow .25s;
+}
+.cta__ig:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 22px 40px -12px rgba(226,100,26,.6)}
+.cta__handle{margin-top:18px;font-size:.85rem;color:var(--ink-soft)}
+.cta__handle .en{font-weight:600;color:var(--orange-deep)}
+.cta__notes{
+  margin-top:30px;padding-top:24px;border-top:1px dashed rgba(31,42,48,.18);
+  display:flex;justify-content:center;gap:28px;flex-wrap:wrap;font-size:.82rem;color:var(--ink-soft);
+}
+.cta__notes b{color:var(--ink);font-weight:700;display:block;margin-bottom:2px;letter-spacing:.04em}
+
+/* ---------- Footer ---------- */
+footer{
+  background:var(--ink);color:#8FA0A8;
+  padding:48px clamp(20px,6vw,80px) 36px;
+}
+.foot{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.foot__brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800}
+.foot__brand .mark{width:32px;height:32px;border-radius:50%}
+.foot small{font-size:.74rem;letter-spacing:.05em}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Nav ===== -->
+<nav class="nav">
+  <a class="nav__logo" href="#top" aria-label="YSY トップへ">
+    <img class="mark" src="images/logo.png" alt="YSY ロゴ" width="38" height="38">
+    <span>
+      <span class="en">YSY</span>
+      <small>ニコニコ鬼コーチYUMI</small>
+    </span>
+  </a>
+  <div class="nav__links">
+    <a href="#profile">プロフィール</a>
+    <a href="#credentials">資格</a>
+    <a href="#services">サポート</a>
+    <a href="#studio">スタジオ</a>
+    <a href="#sponsor">夢への挑戦</a>
+    <a class="nav__cta" href="https://www.instagram.com/kokorokaradaysy/" target="_blank" rel="noopener">DMで相談</a>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero" id="top">
+  <div>
+    <span class="hero__eyebrow"><span class="dot"></span>静岡県袋井市浅羽・土台づくり専門スタジオ</span>
+    <h1><span class="oni">ニコニコ鬼コーチ</span>、<br><span class="stroke">笑顔で追い込む</span>。</h1>
+    <div class="hero__name">
+      <span class="en">YUMI</span>
+      <span class="ja">心と体の元気サポーターYSY｜太田 由美</span>
+    </div>
+    <p class="hero__lead">
+      優しさだけじゃ変われない。でも、厳しさだけでも続かない。<br>
+      だから私は、笑顔で追い込む。本気で変わりたいあなたの可能性を、本気で引き出します。
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="https://www.instagram.com/kokorokaradaysy/" target="_blank" rel="noopener">体験・相談はDMから →</a>
+      <a class="btn btn--ghost" href="#services">サポート内容を見る</a>
+    </div>
+    <div class="hero__meta">
+      <div><strong>FOR</strong><small>幼児〜シニア・アスリート</small></div>
+      <div><strong>WHERE</strong><small>静岡県袋井市浅羽</small></div>
+      <div><strong>ROLE</strong><small>土台づくり専門コーチ／3児の母</small></div>
+    </div>
+  </div>
+
+  <div class="hero__visual">
+    <img class="hero__logo" src="images/logo.png" alt="心と体の元気サポーターYSY 公式キャラクター">
+    <div class="float-chip float-chip--1" aria-hidden="true"><span class="ico">🥊</span>笑顔で追い込む</div>
+    <div class="float-chip float-chip--2" aria-hidden="true"><span class="ico">🌱</span>土台づくり</div>
+    <div class="float-chip float-chip--3" aria-hidden="true"><span class="ico">👶</span>Jr〜アスリート</div>
+  </div>
+
+  <div class="hero__scroll en">SCROLL</div>
+</header>
+
+<!-- ===== Manifesto pull-quote ===== -->
+<section class="manifesto">
+  <div class="manifesto__inner reveal">
+    <p>
+      <span class="hl">優しさだけじゃ変われない。</span><br>
+      でも、<span class="hl">厳しさだけでも続かない。</span><br>
+      だから私は <span class="em">笑顔で追い込む</span>♪
+    </p>
+    <span class="manifesto__sign en">YUMI'S CREDO</span>
+  </div>
+</section>
+
+<!-- ===== Profile ===== -->
+<section class="profile" id="profile">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label en">PROFILE</span>
+      <h2>太田 由美（YUMI）について</h2>
+    </div>
+    <div class="profile__grid">
+      <div class="profile__photo reveal">
+        <img src="images/profile.jpg" alt="ニコニコ鬼コーチ YUMI（太田由美）" loading="lazy">
+        <div class="profile__badge">
+          <span class="en">YSY</span> 心と体の元気サポーター・太田 由美
+        </div>
+      </div>
+      <div class="profile__body reveal">
+        <h3>来た時の自分と、<em>帰る時の自分</em>。<br>その変化を、一緒に喜びたい。</h3>
+        <p>
+          地元・静岡県袋井市浅羽で、土台づくり専門スタジオを運営しています。コンディショニングからトレーニングまで、一人ひとりに合わせたメニューで「なりたい自分」になるためのお手伝いをさせていただいています。
+        </p>
+        <p>
+          幼児からシニア、競技力を上げたいアスリートまで、幅広い世代をサポート。家事・子育て・仕事に奮闘する3児の母として、自分自身もまだまだ挑戦し続ける現役プレイヤーです。
+        </p>
+        <blockquote class="profile__quote">
+          とにかく楽しむ♪ を1番に考えて指導しています。来た時の自分と帰る時の自分、心と体の変化を感じてもらえたら嬉しいです。
+        </blockquote>
+        <div class="profile__keywords">
+          <span class="kw">ニコニコ鬼コーチ</span>
+          <span class="kw">土台づくり専門</span>
+          <span class="kw">パーソナルトレーニング</span>
+          <span class="kw">コンディショニング</span>
+          <span class="kw">Jr育成</span>
+          <span class="kw">競技力UP</span>
+          <span class="kw">健康・ボディメイク</span>
+          <span class="kw">3児の母</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Credentials ===== -->
+<section class="creds" id="credentials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label en">QUALIFICATIONS</span>
+      <h2>本気のサポートを支える、確かな資格</h2>
+      <p>体だけでなく心の側面まで含めて、6つの専門領域から多角的にアプローチします。</p>
+    </div>
+    <div class="creds__grid">
+      <div class="cred reveal">
+        <span class="cred__num en">01</span>
+        <div class="cred__body">
+          <strong>JCCA アドバンストトレーナー</strong>
+          <span>日本コアコンディショニング協会認定</span>
+        </div>
+      </div>
+      <div class="cred reveal">
+        <span class="cred__num en">02</span>
+        <div class="cred__body">
+          <strong>KOBA式体幹バランストレーニング マスタートレーナー</strong>
+          <span>パートナーシップ契約</span>
+        </div>
+      </div>
+      <div class="cred reveal">
+        <span class="cred__num en">03</span>
+        <div class="cred__body">
+          <strong>LPN社 ストレッチポール テクニカルアドバイザー</strong>
+          <span>コンディショニングのスペシャリスト</span>
+        </div>
+      </div>
+      <div class="cred reveal">
+        <span class="cred__num en">04</span>
+        <div class="cred__body">
+          <strong>寺中特殊部隊認定 トレーニングコーチ</strong>
+          <span>本格的なトレーニング指導</span>
+        </div>
+      </div>
+      <div class="cred reveal">
+        <span class="cred__num en">05</span>
+        <div class="cred__body">
+          <strong>バーチャルボクシング インストラクター</strong>
+          <span>楽しく汗をかける有酸素トレーニング</span>
+        </div>
+      </div>
+      <div class="cred reveal">
+        <span class="cred__num en">06</span>
+        <div class="cred__body">
+          <strong>しつもんメンタルトレーニング インストラクター</strong>
+          <span>心の側面からのサポート</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label en">WHO IT'S FOR</span>
+      <h2>こんな方をサポートしています</h2>
+      <p>キッズからシニアまで、目的に合わせたメニューを組み立てます。</p>
+    </div>
+    <div class="services__grid">
+      <article class="scard reveal">
+        <div class="ico">👶</div>
+        <h3>Jr育成・キッズ</h3>
+        <p>遊びの要素を取り入れた体幹トレーニングで、運動の土台となるバランス感覚・姿勢・体の使い方を育てます。スポーツを始めたばかりのお子さまにも。</p>
+        <span class="tagline en">FOR KIDS</span>
+      </article>
+      <article class="scard reveal">
+        <div class="ico">🏃‍♂️</div>
+        <h3>競技力UP・アスリート</h3>
+        <p>怪我を減らし、競技力を引き上げるための土台づくり。コンディショニングと専門トレーニングを組み合わせ、本気のパフォーマンス向上をサポートします。</p>
+        <span class="tagline en">FOR ATHLETES</span>
+      </article>
+      <article class="scard reveal">
+        <div class="ico">💪</div>
+        <h3>健康・ボディメイク</h3>
+        <p>運動が苦手な方も大丈夫。「来るのが楽しみになる」を大切に、無理なく続けられるパーソナルメニューで体力づくり・姿勢改善・ボディメイクを支えます。</p>
+        <span class="tagline en">FOR ADULTS</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Studio ===== -->
+<section class="studio" id="studio">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label en">STUDIO</span>
+      <h2>静岡県袋井市浅羽の、土台づくり専門スタジオ</h2>
+    </div>
+    <div class="studio__grid">
+      <div class="studio__body reveal">
+        <h3>地元・浅羽で、安心して動ける場所を。</h3>
+        <p>
+          オープンから1年半、たくさんの方との出逢いに感謝しながら、スタジオを少しずつ「動きやすい空間」へと改良してきました。床の防音対策をはじめ、思いっきり動ける環境を整えています。
+        </p>
+        <p>
+          地元が大好きだから、この袋井市浅羽で自分の場所が持てたことが、何より嬉しい。コンディショニングからトレーニングまで、安心して通っていただける一人ひとりの居場所をつくっています。
+        </p>
+        <div class="studio__facts">
+          <div class="fact"><span class="ico">📍</span><strong>静岡県袋井市浅羽</strong><span>地元密着・通いやすい立地</span></div>
+          <div class="fact"><span class="ico">🔇</span><strong>床の防音対策済み</strong><span>思いっきり動ける環境</span></div>
+          <div class="fact"><span class="ico">👨‍👩‍👧</span><strong>幅広い世代に対応</strong><span>幼児〜シニア・アスリート</span></div>
+          <div class="fact"><span class="ico">🎯</span><strong>1対1のパーソナル</strong><span>あなた専用メニュー</span></div>
+        </div>
+      </div>
+      <div class="studio__photo reveal">
+        <img src="images/sea.jpg" alt="袋井市浅羽・地元の海" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Voices ===== -->
+<section class="voices" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label en">VOICES</span>
+      <h2>通ってくださる方々から、こんな声が届いています</h2>
+    </div>
+    <div class="voices__grid">
+      <div class="voice reveal"><span class="quote-mark">"</span><p>ここに来ると、心まで軽くなる。</p></div>
+      <div class="voice reveal"><span class="quote-mark">"</span><p>体力がついて、元気が出るようになった。</p></div>
+      <div class="voice reveal"><span class="quote-mark">"</span><p>運動が苦手だったのに、通うのが楽しみになった。</p></div>
+      <div class="voice reveal"><span class="quote-mark">"</span><p>怪我が減って、競技力も上がった。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Sponsor / Dream ===== -->
+<section class="sponsor" id="sponsor">
+  <div class="wrap reveal">
+    <span class="label en">DREAM &amp; CHALLENGE</span>
+    <h2>夢を追う主婦の挑戦に、<br><span class="hl">あなたの応援が力になります。</span> 🌸</h2>
+    <p class="sponsor__lead">
+      家事・子育て・仕事に追われながらも、どうしても諦めたくない夢があります。この仕事が大好きだから。もっとたくさんの笑顔に出逢いたいから。<br>
+      もっと寄り添える力があれば、もっと多くの笑顔を増やせる。そう信じているから、この道を本気で続けたいと心から思っています。
+    </p>
+
+    <div class="dream">
+      <div class="dream__item">
+        <span class="dream__num en">01</span>
+        <strong>指導力を磨く学び直し</strong>
+        <span>県外での研修・パーソナル受講</span>
+      </div>
+      <div class="dream__item">
+        <span class="dream__num en">02</span>
+        <strong>地元の子ども・アスリート支援</strong>
+        <span>未来のアスリートを育てたい</span>
+      </div>
+      <div class="dream__item">
+        <span class="dream__num en">03</span>
+        <strong>安心して動けるスタジオづくり</strong>
+        <span>設備・環境のさらなる改良</span>
+      </div>
+      <div class="dream__item">
+        <span class="dream__num en">04</span>
+        <strong>自分自身も選手として挑戦</strong>
+        <span>生涯現役。階段レース・ボクシングへ</span>
+      </div>
+    </div>
+
+    <div class="sponsor__return">
+      <h4>応援いただいた皆さまへ</h4>
+      <p>感謝の気持ちは、活動報告・レッスン・SNSでの紹介で、しっかりお返しさせていただきます。共感していただける企業様・個人様、ぜひInstagramのDMからお気軽にご連絡ください。</p>
+    </div>
+
+    <a class="btn btn--primary" href="https://www.instagram.com/kokorokaradaysy/" target="_blank" rel="noopener">スポンサー・応援のご相談はDMから →</a>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta" id="contact">
+  <div class="cta__box reveal">
+    <h2>体験・お問い合わせ、お気軽にどうぞ。</h2>
+    <p>「相談だけ」でも大丈夫です。あなたの「変わりたい」を、本気で受け止めます。InstagramのDMが一番スムーズです。</p>
+    <a class="cta__ig" href="https://www.instagram.com/kokorokaradaysy/" target="_blank" rel="noopener">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+      Instagramをフォロー・DMする
+    </a>
+    <p class="cta__handle">アカウント：<span class="en">@kokorokaradaysy</span></p>
+
+    <div class="cta__notes">
+      <div><b>FOR</b>幼児〜シニア・アスリート</div>
+      <div><b>WHERE</b>静岡県袋井市浅羽</div>
+      <div><b>CONTACT</b>Instagram DM / LINE</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="foot">
+    <div class="foot__brand">
+      <img class="mark" src="images/logo.png" alt="" width="32" height="32">
+      <span><span class="en">YSY</span>｜心と体の元気サポーター 太田由美（ニコニコ鬼コーチYUMI）</span>
+    </div>
+    <small>&copy; 2026 KOKORO KARADA YSY — Yumi Ota, Fukuroi Shizuoka.</small>
+  </div>
+</footer>
+
+<script>
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}
+  });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
