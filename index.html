@@ -312,6 +312,100 @@ section{padding:clamp(72px,10vw,130px) clamp(20px,6vw,80px)}
 }
 @media(max-width:880px){.studio__grid{grid-template-columns:1fr}}
 
+/* ---------- Pricing ---------- */
+.pricing{
+  background:
+    radial-gradient(700px 400px at -10% 0%,#F2F9E4 0%,transparent 55%),
+    radial-gradient(700px 400px at 110% 100%,var(--cream) 0%,transparent 55%),
+    var(--paper);
+}
+.pricing__grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:clamp(16px,2.4vw,24px);margin-bottom:36px;
+}
+.pcard{
+  background:#fff;border-radius:var(--radius);padding:30px 28px;
+  border:1px solid rgba(31,42,48,.08);box-shadow:0 10px 30px -22px rgba(31,42,48,.25);
+  display:flex;flex-direction:column;gap:18px;position:relative;overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+}
+.pcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.pcard::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:5px;
+  background:linear-gradient(90deg,var(--orange),var(--yellow));
+}
+.pcard:nth-child(2)::before{background:linear-gradient(90deg,var(--yellow),var(--lime))}
+.pcard:nth-child(3)::before{background:linear-gradient(90deg,var(--lime),var(--lime-deep))}
+.pcard:nth-child(4)::before{background:linear-gradient(90deg,var(--orange-deep),var(--orange))}
+.pcard__tag{
+  display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.16em;
+  color:var(--orange-deep);background:var(--cream);
+  padding:5px 12px;border-radius:99px;margin-bottom:10px;
+}
+.pcard__head h3{font-size:1.15rem;font-weight:900;margin-bottom:6px}
+.pcard__head p{font-size:.85rem;color:var(--ink-soft)}
+.pcard__rates{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:auto}
+.pcard__rates li{
+  display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center;
+  padding:12px 16px;background:#FDFBF3;border-radius:12px;
+  border:1px solid rgba(31,42,48,.06);
+}
+.pcard__rates li.hl{background:linear-gradient(90deg,#FFF4E0,#F5FBE6);border-color:#F2DAA8}
+.pcard__rates li.note{
+  display:block;text-align:center;font-size:.78rem;color:var(--ink-soft);
+  background:transparent;border:none;padding:6px 0;
+}
+.pcard__rates span{font-size:.82rem;font-weight:700;color:var(--ink-soft)}
+.pcard__rates b{font-family:'Outfit',sans-serif;font-weight:700;font-size:.85rem;color:var(--ink);letter-spacing:.04em}
+.pcard__rates em{
+  font-style:normal;font-family:'Outfit',sans-serif;font-weight:800;
+  font-size:1.1rem;color:var(--orange-deep);display:flex;flex-direction:column;align-items:flex-end;
+}
+.pcard__rates em small{font-size:.7rem;font-weight:600;color:var(--ink-soft);font-family:'Zen Kaku Gothic New',sans-serif;}
+
+.pricing__extra{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:36px;
+}
+.extra-card{
+  background:#fff;border:1px solid rgba(31,42,48,.08);border-radius:16px;
+  padding:20px 22px;display:flex;gap:16px;align-items:flex-start;
+}
+.extra-card__ico{font-size:1.6rem;line-height:1;flex:none}
+.extra-card strong{display:block;font-weight:800;margin-bottom:4px}
+.extra-card p{font-size:.86rem;color:var(--ink-soft)}
+.extra-card p b{color:var(--orange-deep);font-weight:800}
+
+.cancel{
+  background:#fff;border-radius:var(--radius);padding:clamp(24px,3vw,36px);
+  border:1px solid rgba(31,42,48,.08);box-shadow:0 10px 30px -22px rgba(31,42,48,.2);
+}
+.cancel__title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.cancel__title .ico{font-size:1.4rem}
+.cancel__title h3{font-size:1.1rem;font-weight:900}
+.cancel__list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.cancel__list li{
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:13px 18px;border-radius:12px;background:#FDFBF3;
+  border:1px solid rgba(31,42,48,.06);
+}
+.cancel__list .when{font-size:.9rem;font-weight:700}
+.cancel__list .rate{
+  font-family:'Outfit',sans-serif;font-weight:800;font-size:1rem;
+  padding:4px 14px;border-radius:99px;letter-spacing:.04em;
+}
+.rate--ok{background:#E5F4CB;color:var(--lime-deep)}
+.rate--mid{background:#FFF1C7;color:#A8780A}
+.rate--bad{background:#FFE2D6;color:var(--orange-deep)}
+.cancel__note{font-size:.82rem;color:var(--ink-soft)}
+
+@media(max-width:760px){
+  .pricing__grid{grid-template-columns:1fr}
+  .pricing__extra{grid-template-columns:1fr}
+  .pcard__rates li{grid-template-columns:1fr auto;row-gap:6px}
+  .pcard__rates b{justify-self:end}
+  .pcard__rates em{grid-column:1/-1;align-items:flex-end;text-align:right}
+}
+
 /* ---------- Voices ---------- */
 .voices__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:14px}
 .voice{
@@ -460,6 +554,7 @@ footer{
     <a href="#profile">プロフィール</a>
     <a href="#credentials">資格</a>
     <a href="#services">サポート</a>
+    <a href="#pricing">料金</a>
     <a href="#studio">スタジオ</a>
     <a href="#sponsor">夢への挑戦</a>
     <a href="#access">アクセス</a>
@@ -669,7 +764,109 @@ footer{
   </div>
 </section>
 
-<!-- ===== Voices ===== -->
+<!-- ===== Pricing ===== -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="label en">PRICING</span>
+      <h2>トレーニング料金</h2>
+      <p>目的やスタイルに合わせて、お一人でもグループでも。出張指導もご相談ください。</p>
+    </div>
+
+    <!-- メインプラン -->
+    <div class="pricing__grid">
+      <article class="pcard reveal">
+        <div class="pcard__head">
+          <span class="pcard__tag en">PERSONAL</span>
+          <h3>パーソナルトレーニング</h3>
+          <p>1対1でじっくり、あなた専用のメニューで。</p>
+        </div>
+        <ul class="pcard__rates">
+          <li><span>一般</span><b>50分</b><em>¥5,000</em></li>
+          <li><span>一般</span><b>30分</b><em>¥2,800</em></li>
+          <li class="hl"><span>Jr.アスリート</span><b>50分</b><em>¥4,500</em></li>
+        </ul>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard__head">
+          <span class="pcard__tag en">PAIR</span>
+          <h3>ペアトレーニング</h3>
+          <p>お友達・パートナーと一緒に。1人あたりがお得に。</p>
+        </div>
+        <ul class="pcard__rates">
+          <li><span>一般</span><b>50分</b><em>¥7,000<small>（お一人 ¥3,500）</small></em></li>
+          <li class="hl"><span>Jr.アスリート</span><b>50分</b><em>¥6,000<small>（お一人 ¥3,000）</small></em></li>
+        </ul>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard__head">
+          <span class="pcard__tag en">FAMILY</span>
+          <h3>家族ペアトレーニング</h3>
+          <p>ご家族で一緒に、運動の習慣を。</p>
+        </div>
+        <ul class="pcard__rates">
+          <li><span>2名</span><b>50分</b><em>¥5,800</em></li>
+          <li class="note">※ 3人目以降 +¥1,000 / 1名</li>
+        </ul>
+      </article>
+
+      <article class="pcard reveal">
+        <div class="pcard__head">
+          <span class="pcard__tag en">GROUP</span>
+          <h3>少人数トレーニング</h3>
+          <p>3〜5名のグループでわいわい楽しく。</p>
+        </div>
+        <ul class="pcard__rates">
+          <li><span>1名あたり</span><b>50分</b><em>¥2,500</em></li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- 回数券・出張 -->
+    <div class="pricing__extra">
+      <div class="extra-card reveal">
+        <span class="extra-card__ico">🎟️</span>
+        <div>
+          <strong>回数券（10回）</strong>
+          <p>通常料金より <b>¥2,000〜¥3,000</b> お得。詳しくはお問い合わせください。</p>
+        </div>
+      </div>
+      <div class="extra-card reveal">
+        <span class="extra-card__ico">🚚</span>
+        <div>
+          <strong>出張指導</strong>
+          <p>部活動・クラブチーム・格闘技ジムなどへの出張指導も可能です。お気軽にご相談ください。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- キャンセルポリシー -->
+    <div class="cancel reveal">
+      <div class="cancel__title">
+        <span class="ico">📅</span>
+        <h3>キャンセルポリシー</h3>
+      </div>
+      <ul class="cancel__list">
+        <li>
+          <span class="when">前日 21時まで</span>
+          <span class="rate rate--ok">0%</span>
+        </li>
+        <li>
+          <span class="when">当日 2時間前まで</span>
+          <span class="rate rate--mid">50%</span>
+        </li>
+        <li>
+          <span class="when">当日 2時間以内・無断キャンセル</span>
+          <span class="rate rate--bad">100%</span>
+        </li>
+      </ul>
+      <p class="cancel__note">ご連絡いただければ柔軟に対応します。やむを得ない事情がある場合は、お早めにDM・LINEでご連絡ください。</p>
+    </div>
+  </div>
+</section>
+
 <section class="voices" style="background:#fff">
   <div class="wrap">
     <div class="sec-head reveal">
